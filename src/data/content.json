@@ -1,0 +1,200 @@
+{
+  "archetypes": [
+    {
+      "id": "afrodite",
+      "name": "Afrodite",
+      "summary": "Amor, sensualidade e beleza.",
+      "styleTips": "Maquiagem marcante (olhos e boca), curvas valorizadas, luxo feminino.",
+      "palette": [
+        "#C288A3",
+        "#9333EA",
+        "#FDF2F8"
+      ],
+      "icon": "logo-rose.svg"
+    },
+    {
+      "id": "sereia",
+      "name": "Sereia",
+      "summary": "Mistério, natureza e encantamento.",
+      "styleTips": "Azuis e verdes, pérolas e conchas, fluidez nas roupas.",
+      "palette": [
+        "#1CA3EC",
+        "#00BFA6",
+        "#E0FBFC"
+      ],
+      "icon": "logo-rose.svg"
+    },
+    {
+      "id": "cleopatra",
+      "name": "Cleópatra",
+      "summary": "Poder, liderança e sofisticação.",
+      "styleTips": "Delineado marcante, tecidos nobres, pedras preciosas.",
+      "palette": [
+        "#222222",
+        "#C5A880",
+        "#D4AF37"
+      ],
+      "icon": "logo-rose.svg"
+    },
+    {
+      "id": "hera",
+      "name": "Hera",
+      "summary": "Elegância clássica e estrutura familiar.",
+      "styleTips": "Tons claros, joias discretas, penteados elegantes.",
+      "palette": [
+        "#EEE8F4",
+        "#ABCDEF",
+        "#FFFFFF"
+      ],
+      "icon": "logo-rose.svg"
+    }
+  ],
+  "tips": [
+    {
+      "archetypeId": "afrodite",
+      "text": "Batom vermelho cereja para destacar lábios.",
+      "type": "makeup"
+    },
+    {
+      "archetypeId": "sereia",
+      "text": "Iluminador perolado nas têmporas para brilho 'molhado'.",
+      "type": "makeup"
+    },
+    {
+      "archetypeId": "cleopatra",
+      "text": "Delineado gatinho com traço firme.",
+      "type": "makeup"
+    },
+    {
+      "archetypeId": "hera",
+      "text": "Coque polido com acessórios minimalistas.",
+      "type": "hair"
+    }
+  ],
+  "affirmations": [
+    {
+      "archetypeId": null,
+      "text": "Eu honro minha essência e deixo minha beleza florescer."
+    },
+    {
+      "archetypeId": "afrodite",
+      "text": "Meu magnetismo natural ilumina os espaços."
+    },
+    {
+      "archetypeId": "sereia",
+      "text": "Eu fluo com a vida com graça e mistério."
+    },
+    {
+      "archetypeId": "cleopatra",
+      "text": "Minha presença é forte, sábia e refinada."
+    },
+    {
+      "archetypeId": "hera",
+      "text": "Eu exalo elegância e equilíbrio."
+    }
+  ],
+  "quiz": [
+    {
+      "id": "q1",
+      "prompt": "Qual look te faz sentir mais você?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Vestido justo e salto",
+          "weights": {
+            "afrodite": 3
+          }
+        },
+        {
+          "id": "o2",
+          "text": "Vestido fluido e sandália",
+          "weights": {
+            "sereia": 3
+          }
+        },
+        {
+          "id": "o3",
+          "text": "Tailleur elegante",
+          "weights": {
+            "hera": 3
+          }
+        },
+        {
+          "id": "o4",
+          "text": "Preto e dourado, delineado marcante",
+          "weights": {
+            "cleopatra": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "prompt": "Um acessório indispensável:",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Batom ousado",
+          "weights": {
+            "afrodite": 2
+          }
+        },
+        {
+          "id": "o2",
+          "text": "Brilhos perolados",
+          "weights": {
+            "sereia": 2
+          }
+        },
+        {
+          "id": "o3",
+          "text": "Joias clássicas",
+          "weights": {
+            "hera": 2
+          }
+        },
+        {
+          "id": "o4",
+          "text": "Pedras preciosas",
+          "weights": {
+            "cleopatra": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "prompt": "Como quer ser percebida hoje?",
+      "options": [
+        {
+          "id": "o1",
+          "text": "Magnetizante",
+          "weights": {
+            "afrodite": 2
+          }
+        },
+        {
+          "id": "o2",
+          "text": "Misteriosa",
+          "weights": {
+            "sereia": 2
+          }
+        },
+        {
+          "id": "o3",
+          "text": "Elegante",
+          "weights": {
+            "hera": 2
+          }
+        },
+        {
+          "id": "o4",
+          "text": "Imponente",
+          "weights": {
+            "cleopatra": 2
+          }
+        }
+      ]
+    }
+  ]
+}

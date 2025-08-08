@@ -1,0 +1,11 @@
+:root{
+  --color-accent: #9333EA;
+  --color-secondary: #C288A3;
+}
+[data-theme="afrodite"]{ --color-accent:#C288A3; --color-secondary:#9333EA; }
+[data-theme="sereia"]{ --color-accent:#1CA3EC; --color-secondary:#00BFA6; }
+[data-theme="cleopatra"]{ --color-accent:#D4AF37; --color-secondary:#222222; }
+[data-theme="hera"]{ --color-accent:#ABCDEF; --color-secondary:#EEE8F4; }
+
+.btn{ background: var(--color-accent); }
+.card-title{ color: var(--color-accent); }

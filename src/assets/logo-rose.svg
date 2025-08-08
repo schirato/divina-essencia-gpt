@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <defs><style>.a{fill:#C288A3}.b{fill:#FFF8F4}</style></defs>
+  <circle cx="256" cy="256" r="220" class="a"/>
+  <path class="b" d="M256 140c-41 0-74 33-74 74 0 61 74 132 74 132s74-71 74-132c0-41-33-74-74-74z"/>
+  <text x="256" y="470" font-family="Playfair Display, serif" font-size="52" text-anchor="middle" fill="#9333EA">Divina Essência</text>
+</svg>
