@@ -1,11 +1,14 @@
-:root{
-  --color-accent: #9333EA;
-  --color-secondary: #C288A3;
-}
-[data-theme="afrodite"]{ --color-accent:#C288A3; --color-secondary:#9333EA; }
-[data-theme="sereia"]{ --color-accent:#1CA3EC; --color-secondary:#00BFA6; }
-[data-theme="cleopatra"]{ --color-accent:#D4AF37; --color-secondary:#222222; }
-[data-theme="hera"]{ --color-accent:#ABCDEF; --color-secondary:#EEE8F4; }
 
-.btn{ background: var(--color-accent); }
-.card-title{ color: var(--color-accent); }
+/* v5 professional polish */
+:root{
+  --radius: 16px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md: 0 6px 24px rgba(147,51,234,.15);
+  --glass: rgba(255,255,255,.7);
+}
+.card{ border-radius: var(--radius); box-shadow: var(--shadow-sm); }
+.elevated{ box-shadow: var(--shadow-md); }
+.hero{
+  background: radial-gradient(1200px 800px at 40% -200px, #FDF2F8 25%, #FFF8F4 60%, transparent 70%),
+              linear-gradient(180deg, rgba(147,51,234,.08), rgba(194,136,163,.08));
+}
