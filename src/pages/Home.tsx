@@ -2,9 +2,11 @@ import content from "../data/content.json";
 import { useDivina, requestDailyNotification, scheduleDaily } from "../store";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useForceRefresh } from "../hooks/useForceRefresh";
 
 export default function Home() {
   const { selectedArchetype } = useDivina();
+  const { refreshKey } = useForceRefresh();
   const affirmation = pickAffirmation(selectedArchetype || undefined);
 
   useEffect(() => {
@@ -14,10 +16,10 @@ export default function Home() {
       "data-theme",
       (selectedArchetype || "").toString()
     );
-  }, [selectedArchetype]);
+  }, [selectedArchetype, refreshKey]); // Adicionar refreshKey para re-executar quando cache for invalidado
 
   return (
-    <main className="p-4 max-w-3xl mx-auto">
+    <main className="p-4 max-w-3xl mx-auto" key={refreshKey}>
       <section className="card p-4 mb-4">
         <h2 className="font-title text-xl mb-2">Afirmação do dia</h2>
         <p className="italic">“{affirmation}”</p>
@@ -63,8 +65,24 @@ export default function Home() {
 }
 
 function pickAffirmation(arch?: string) {
-  const affirm = (content.affirmations as any[]).filter(
-    (a) => !a.archetypeId || a.archetypeId === arch
+  // Afirmações temporárias até serem adicionadas ao content.json
+  const defaultAffirmations = [
+    { text: "Eu sou forte e confiante em minha jornada." },
+    { text: "Minha beleza interior se reflete em tudo que faço." },
+    { text: "Eu abraço minha essência única e poderosa." },
+    { text: "Cada dia é uma nova oportunidade de brilhar." },
+    { text: "Eu mereço amor, respeito e felicidade." },
+    { text: "Minha intuição me guia pelo caminho certo." },
+    { text: "Eu sou a heroína da minha própria história." },
+    { text: "Minha energia positiva transforma tudo ao meu redor." },
+  ];
+
+  const affirmations = (content as any).affirmations || defaultAffirmations;
+  const affirm = affirmations.filter(
+    (a: any) => !a.archetypeId || a.archetypeId === arch
   );
-  return affirm[Math.floor(Math.random() * affirm.length)].text;
+  return (
+    affirm[Math.floor(Math.random() * affirm.length)]?.text ||
+    "Você é incrível!"
+  );
 }

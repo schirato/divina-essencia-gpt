@@ -10,8 +10,16 @@ import routes from "./routes";
 const qc = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60,
-      gcTime: 1000 * 60 * 60,
+      // Reduzir tempo de cache para desenvolvimento
+      staleTime: process.env.NODE_ENV === "development" ? 0 : 1000 * 60,
+      gcTime:
+        process.env.NODE_ENV === "development" ? 1000 * 30 : 1000 * 60 * 60,
+      // Sempre refetch ao focar na janela
+      refetchOnWindowFocus: true,
+      // Sempre refetch ao reconectar
+      refetchOnReconnect: true,
+      // Retry menos agressivo
+      retry: 1,
     },
   },
 });

@@ -1,4 +1,4 @@
-import { RouteObject } from "react-router-dom";
+import { RouteObject, Navigate } from "react-router-dom";
 import Shell from "./shell";
 import AuthGuard from "./AuthGuard";
 import Home from "./pages/Home";
@@ -16,29 +16,29 @@ import Profile from "./pages/Profile";
 const routes: RouteObject[] = [
   {
     path: "/",
+    element: <Navigate to="/welcome" replace />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+  {
+    path: "/welcome",
+    element: <Welcome />,
+  },
+  {
+    path: "/",
     element: <Shell />,
     children: [
       {
-        path: "",
+        path: "home",
         element: (
           <AuthGuard>
             <Home />
-          </AuthGuard>
-        ),
-      },
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "register",
-        element: <Register />,
-      },
-      {
-        path: "welcome",
-        element: (
-          <AuthGuard>
-            <Welcome />
           </AuthGuard>
         ),
       },
