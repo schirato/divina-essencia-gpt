@@ -1,21 +1,32 @@
 {
   "archetypes": [
     {
-      "id": "afrodite",
-      "name": "Afrodite",
-      "summary": "Amor, sensualidade e magnetismo criativo.",
-      "styleTips": "Lábios marcantes, pele glow, tecidos acetinados, joias delicadas.",
+      "id": "nefertiti",
+      "name": "Nefertiti",
+      "summary": "Ícone de elegância, presença e sofisticação.",
+      "styleTips": "Alfaiataria, joias estruturadas, penteados polidos, pele aveludada.",
       "palette": [
-        "#C288A3",
-        "#FDF2F8",
-        "#7C3AED"
+        "#2B2A2F",
+        "#D4AF37",
+        "#F6E7EA"
+      ]
+    },
+    {
+      "id": "cleopatra",
+      "name": "Cleópatra",
+      "summary": "Poder, carisma e magnetismo estratégico.",
+      "styleTips": "Delineado marcante, tecidos nobres, pedras preciosas.",
+      "palette": [
+        "#111827",
+        "#C5A880",
+        "#EAE1CF"
       ]
     },
     {
       "id": "atena",
       "name": "Atena",
-      "summary": "Estratégia, sabedoria prática e liderança racional.",
-      "styleTips": "Alfaiataria, linhas retas, delineado preciso, dourado discreto.",
+      "summary": "Sabedoria prática, estratégia e liderança racional.",
+      "styleTips": "Linhas retas, alfaiataria, dourado discreto, maquiagem precisa.",
       "palette": [
         "#0F172A",
         "#D4AF37",
@@ -23,72 +34,72 @@
       ]
     },
     {
-      "id": "artemis",
-      "name": "Ártemis",
-      "summary": "Autonomia, foco e conexão com a natureza.",
-      "styleTips": "Utilitário elegante, botas, verdes terrosos e texturas naturais.",
+      "id": "afrodite",
+      "name": "Afrodite",
+      "summary": "Amor, sensualidade e magnetismo criativo.",
+      "styleTips": "Lábios marcantes, glow suave, sedas, toques rosé.",
       "palette": [
-        "#065F46",
-        "#10B981",
-        "#ECFDF5"
+        "#C288A3",
+        "#FDF2F8",
+        "#7C3AED"
       ]
     },
     {
-      "id": "hera",
-      "name": "Hera",
-      "summary": "Soberania, compromisso e sofisticação clássica.",
-      "styleTips": "Joias estruturadas, penteados elegantes, vestidos atemporais.",
+      "id": "lilith",
+      "name": "Lilith",
+      "summary": "Independência, transgressão e poder pessoal.",
+      "styleTips": "Preto profundo, contrastes, acessórios statement.",
       "palette": [
-        "#111827",
-        "#C5A880",
+        "#0B0B0F",
+        "#9333EA",
         "#F6E7EA"
       ]
     },
     {
-      "id": "demeter",
-      "name": "Deméter",
-      "summary": "Nutrição, abundância e cuidado.",
-      "styleTips": "Fibras naturais, tons quentes e suaves, maquiagem fresca.",
+      "id": "sereia",
+      "name": "Sereia",
+      "summary": "Encanto, mistério e fascínio hipnótico.",
+      "styleTips": "Azuis/verde-mar, pérolas, fluidez e brilho aquoso.",
       "palette": [
-        "#F6E7EA",
-        "#C288A3",
-        "#FFF8F4"
+        "#0EA5E9",
+        "#14B8A6",
+        "#E0F2FE"
       ]
     },
     {
-      "id": "persefone",
-      "name": "Perséfone",
-      "summary": "Transformação, mistério e renovação cíclica.",
-      "styleTips": "Tons profundos, transparências, detalhes simbólicos.",
+      "id": "medusa",
+      "name": "Medusa",
+      "summary": "Proteção, transformação e limites firmes.",
+      "styleTips": "Verdes profundos, dourado, texturas reptilianas sutis.",
       "palette": [
-        "#4C1D95",
-        "#9333EA",
-        "#E9D5FF"
+        "#065F46",
+        "#D4AF37",
+        "#ECFDF5"
       ]
     },
     {
-      "id": "hestia",
-      "name": "Héstia",
-      "summary": "Presença serena, autocuidado e centramento.",
-      "styleTips": "Minimalismo elegante, azuis profundos e cremes luminosos.",
+      "id": "fada",
+      "name": "Fada",
+      "summary": "Leveza, encanto lúdico e imaginação.",
+      "styleTips": "Transparências, brilhos etéreos, tons pastel luminosos.",
       "palette": [
-        "#0F172A",
-        "#93C5FD",
-        "#FFF8F4"
+        "#E0E7FF",
+        "#FDF2F8",
+        "#C288A3"
       ]
     }
   ],
   "legacyMap": {
     "afrodite": "afrodite",
-    "sereia": "persefone",
-    "cleopatra": "hera",
-    "hera": "hera",
-    "mae": "demeter",
-    "donzela": "persefone",
-    "mistica": "persefone",
+    "sereia": "sereia",
+    "cleopatra": "cleopatra",
+    "hera": "cleopatra",
+    "mae": "nefertiti",
+    "donzela": "fada",
+    "mistica": "lilith",
     "amante": "afrodite",
-    "soberana": "hera",
-    "cacadora": "artemis",
+    "soberana": "cleopatra",
+    "cacadora": "medusa",
     "sabia": "atena"
   }
 }
