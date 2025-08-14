@@ -1,26 +1,19 @@
 -- =====================================================
 -- Divina Essência — RESET + FULL SCHEMA (v7)
--- Este script APAGA as tabelas existentes e recria tudo do zero.
--- Seguro para rodar em um projeto SUPABASE limpo. Se rodar novamente,
--- continuará funcional (policies/storage usam checagens "if not exists").
+-- Apaga tabelas do app e recria do zero (seguro p/ rodar sempre que quiser resetar).
 -- =====================================================
 
--- Extensões
 create extension if not exists "uuid-ossp";
 create extension if not exists pgcrypto;
 
--- ==============================
--- RESET (tabelas deste app)
--- ==============================
+-- RESET (apaga tabelas do app)
 drop table if exists public.inspiration_posts cascade;
 drop table if exists public.achievements cascade;
 drop table if exists public.planner_entries cascade;
 drop table if exists public.profiles cascade;
 drop table if exists public.archetypes cascade;
 
--- ==============================
 -- LOOKUP: archetypes (DEUSAS)
--- ==============================
 create table public.archetypes (
   id text primary key,
   name text not null,
@@ -39,9 +32,7 @@ insert into public.archetypes (id, name, summary) values
   ('fada','Fada','Leveza, encanto lúdico e imaginação.')
 on conflict (id) do nothing;
 
--- ==============================
 -- profiles
--- ==============================
 create table public.profiles (
   uid uuid primary key references auth.users(id) on delete cascade,
   name text,
@@ -73,9 +64,7 @@ begin
   end if;
 end $$;
 
--- ==============================
 -- planner_entries
--- ==============================
 create table public.planner_entries (
   id uuid primary key default uuid_generate_v4(),
   uid uuid references auth.users(id) on delete cascade,
@@ -116,9 +105,7 @@ begin
   end if;
 end $$;
 
--- ==============================
 -- achievements
--- ==============================
 create table public.achievements (
   id uuid primary key default uuid_generate_v4(),
   uid uuid references auth.users(id) on delete cascade,
@@ -138,9 +125,7 @@ begin
   end if;
 end $$;
 
--- ==============================
--- inspiration_posts (DB)
--- ==============================
+-- inspiration_posts
 create table public.inspiration_posts (
   id uuid primary key default uuid_generate_v4(),
   uid uuid references auth.users(id) on delete cascade,
@@ -178,15 +163,11 @@ begin
   end if;
 end $$;
 
--- ==============================
--- STORAGE (bucket 'inspiration')
--- ==============================
--- Algum ambiente pode não expor storage.create_bucket(); portanto, inserimos direto na tabela.
+-- STORAGE (bucket inspiration) — sem usar storage.create_bucket
 insert into storage.buckets (id, name, public)
 values ('inspiration','inspiration', true)
 on conflict (id) do nothing;
 
--- Policies no storage.objects (cria somente se não existirem)
 do $$
 begin
   if not exists (
@@ -195,7 +176,6 @@ begin
     create policy inspiration_public_read on storage.objects
       for select using (bucket_id = 'inspiration');
   end if;
-
   if not exists (
     select 1 from pg_policies where schemaname='storage' and tablename='objects' and policyname='inspiration_upload_own'
   ) then
@@ -203,7 +183,6 @@ begin
       for insert to authenticated
       with check (bucket_id = 'inspiration' and owner = auth.uid());
   end if;
-
   if not exists (
     select 1 from pg_policies where schemaname='storage' and tablename='objects' and policyname='inspiration_update_own'
   ) then
@@ -212,7 +191,6 @@ begin
       using (bucket_id = 'inspiration' and owner = auth.uid())
       with check (bucket_id = 'inspiration' and owner = auth.uid());
   end if;
-
   if not exists (
     select 1 from pg_policies where schemaname='storage' and tablename='objects' and policyname='inspiration_delete_own'
   ) then
@@ -221,7 +199,3 @@ begin
       using (bucket_id = 'inspiration' and owner = auth.uid());
   end if;
 end $$;
-
--- ==============================
--- FIM
--- ==============================

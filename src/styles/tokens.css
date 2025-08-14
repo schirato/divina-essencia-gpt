@@ -1,0 +1,26 @@
+/* Design tokens — v8 (drop-in, Tailwind-friendly) */
+:root{
+  --radius: 16px;
+  --radius-lg: 24px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md: 0 6px 24px rgba(17,24,39,.12);
+  --shadow-lg: 0 18px 60px rgba(147,51,234,.18);
+  --glass: rgba(255,255,255,.65);
+  --accent: #9333EA;
+  --rose: #C288A3;
+  --bg-soft: #FFF8F4;
+}
+@media (prefers-color-scheme: dark){
+  :root{ color-scheme: dark; }
+  body{ background: #0B0B0F; color: #F5F5F7; }
+}
+.card{ border-radius: var(--radius); box-shadow: var(--shadow-sm); background: white; }
+.card--elevated{ border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); background: rgba(255,255,255,.85); backdrop-filter: blur(10px); }
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:.5rem; padding:.6rem 1rem; border-radius: 12px; background: var(--accent); color:white; font-weight:600; transition:.2s; }
+.btn:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+.btn:active{ transform: translateY(0); filter: brightness(.98); }
+.hero-gradient{
+  background:
+    radial-gradient(1200px 800px at 30% -200px, #FDF2F8 25%, var(--bg-soft) 60%, transparent 70%),
+    linear-gradient(180deg, rgba(147,51,234,.08), rgba(194,136,163,.08));
+}
